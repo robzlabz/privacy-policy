@@ -1,18 +1,15 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/privacy/{name}', function (Request $request, $name) {
+    $name = ucwords(str_replace('-', ' ', $name));
+    $developer = 'Syam Developer';
+    $email = 'xenphy@gmail.com';
+    return view('privacy-policy', compact('name', 'developer', 'email'));
 });
