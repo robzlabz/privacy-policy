@@ -13,3 +13,5 @@ Route::get('/privacy/{name}', function (Request $request, $name) {
     $email = 'xenphy@gmail.com';
     return view('privacy-policy', compact('name', 'developer', 'email'));
 });
+
+Route::view('app', 'app-desc');
